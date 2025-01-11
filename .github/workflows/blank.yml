@@ -1,0 +1,19 @@
+name: activity_types
+run-name: activity_types
+on: 
+  push:
+    branches:
+      - main
+  label:
+    types:
+      - created
+      - deleted
+      - edited
+  
+jobs:
+  activity-type-check:
+    runs-on: ubuntu-latest
+    steps:
+      - if: ${{github.ref}} == 'refs/heads/main'
+        run: echo "worflow run caused by ${{ github.ref_name }} branch"
+  
