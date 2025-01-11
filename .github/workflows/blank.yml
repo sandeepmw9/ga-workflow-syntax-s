@@ -1,9 +1,10 @@
 name: activity_types
 run-name: activity_types
 on: 
-  push:
-    branches:
-      - main
+  workflow_dispatch:
+  # push:
+  #   branches:
+  #     - main
   label:
     types:
       - created
