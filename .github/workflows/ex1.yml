@@ -1,5 +1,5 @@
 name: ex1
-run-name: Deploy to ${{ inputs.deploy_target }} by @${{ github.actor }}
+run-name: this will appear as run-name
 on : push
 jobs:
   ex1:
