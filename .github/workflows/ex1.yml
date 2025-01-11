@@ -1,0 +1,8 @@
+name: ex1
+run-name: Deploy to ${{ inputs.deploy_target }} by @${{ github.actor }}
+on : push
+jobs:
+  ex1:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo ${{ github.run-name }}
