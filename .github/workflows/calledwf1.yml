@@ -1,0 +1,16 @@
+name: reusable_ex
+run-name: reusable_ex
+on:
+  workflow_call:
+    inputs:
+      input1:
+        description: input1 to be passed from caller workflow
+        type: string
+        required: true
+
+jobs:
+  test_job1:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "my name is ${{inputs.input1}}"
+    
