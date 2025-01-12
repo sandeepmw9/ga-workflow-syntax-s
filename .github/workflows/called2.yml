@@ -22,8 +22,8 @@ jobs:
   called_job:
     runs-on: ubuntu-latest
     outputs:
-      job_output1: ${{steps.out_caller2_1.outputs.out1}}
-      job_output2: ${{steps.out_caller2_2.outputs.out2}}
+      job_output1: ${{steps.out_caller2_1.outputs.output1}}
+      job_output2: ${{steps.out_caller2_2.outputs.output2}}
     steps:
       - run: echo "Hello ${{inputs.input1}} ${{inputs.input2}}"
       - name: output_values_to_caller2_1
