@@ -12,10 +12,10 @@ on:
         type: string
         required: true
     outputs:
-      out1:
+      output1:
         description: outptu1
         value: ${{jobs.job1.outputs.job_output1}}
-      out2:
+      output2:
         description: output2
         value: ${{jobs.job1.outputs.job_output2}}
 jobs:
