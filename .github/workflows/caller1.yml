@@ -1,9 +1,9 @@
 name: caller_ex1
 run-name: caller_ex1
-on:
-  push:
-    branches:
-      - main
+on: workflow_dispatch
+  # push:
+  #   branches:
+  #     - main
 jobs:
   job1:
     uses: ./.github/workflows/calledwf1.yml
