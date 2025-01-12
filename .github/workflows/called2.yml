@@ -25,7 +25,7 @@ jobs:
       - run: echo "Hello ${{inputs.input1}} ${{inputs.input2}}"
       - name: output_values_to_caller2_1
         id: out_caller2_1
-        run: echo out1="output1 >> $GITHUB_OUTPUT"
+        run: echo out1="output1" >> $GITHUB_OUTPUT
       - name: output_values_to_caller2_2
         id: out_caller2_2
-        run: echo out2="output2 >> $GITHUB_OUTPUT"
+        run: echo out2="output2" >> $GITHUB_OUTPUT
