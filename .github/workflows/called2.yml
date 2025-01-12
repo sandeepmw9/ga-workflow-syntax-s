@@ -13,11 +13,11 @@ on:
         required: true
     outputs:
       out1:
-        description:  output of first step
-        value: ${{jobs.job1.job_output1}}
-      out2: ${{jobs.job1.job_output2}}
-        description: output of second step
-        value: ${{jobs.job1.job_output2}}
+        description: outptu1
+        value: ${{jobs.job1.outputs.job_output1}}
+      out2:
+        description: output2
+        value: ${{jobs.job1.outputs.job_output2}}
 jobs:
   job1:
     outputs:
