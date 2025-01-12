@@ -1,6 +1,6 @@
 name: caller2
 run-name: caller2
-on: push
+on: workflow_dispatch
 jobs:
   job1:
     uses: ./.github/workflows/called2.yml
