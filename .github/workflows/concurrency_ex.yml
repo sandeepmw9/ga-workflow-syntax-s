@@ -11,12 +11,15 @@ jobs:
       - run: echo "checking job concurrencies"
   concurrency_ex2:
     runs-on: ubuntu-latest
+    concurrency:
+      group: grp1
+      cancel-in-progress: true
     steps:
       - run: echo "checking job concurrencies"
   concurrency_ex3:
     runs-on: ubuntu-latest
     concurrency:
-      group: grp1
+      group: grp2
       cancel-in-progress: true
     steps:
       - run: echo "checking job concurrencies"
