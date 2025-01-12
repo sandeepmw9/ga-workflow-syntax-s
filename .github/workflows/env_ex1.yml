@@ -1,0 +1,14 @@
+name: env_ex1
+run-name: env_ex1
+on: workflow_dispatch
+env:
+  level: workflow
+jobs:
+  job1:
+    env:
+      level: job
+    runs-on: ubuntu-latest
+    steps:
+    - run: echo ${{env.level}}
+      env:
+        level: step
