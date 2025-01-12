@@ -7,7 +7,7 @@ jobs:
     steps:
       - shell: bash
         run: expr 9 \* 9 > multiply.txt
-      - uses: actions/upload-artifacts@v4
+      - uses: actions/upload-artifact@v4
         with:
           name: multiply
           path: multiply.txt
@@ -15,14 +15,14 @@ jobs:
     needs: job1
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/download-artifacts@v4
+      - uses: actions/download-artifact@v4
         with:
           name: multiply
       - shell: bash
         run: |
           value=$(cat multiply.txt)
           expr $value + 9 > final.txt
-      - uses: actions/upload-artifacts@v4
+      - uses: actions/upload-artifact@v4
         with:
           name: final
           path: final.txt
@@ -30,7 +30,7 @@ jobs:
     needs: job2
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/download-artifacts@v4
+      - uses: actions/download-artifact@v4
         with:
           name: final
       - run: cat final.txt
