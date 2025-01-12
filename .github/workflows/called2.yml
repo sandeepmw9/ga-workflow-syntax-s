@@ -14,12 +14,12 @@ on:
     outputs:
       output1:
         description: outptu1
-        value: ${{jobs.job1.outputs.job_output1}}
+        value: ${{jobs.called_job.outputs.job_output1}}
       output2:
         description: output2
-        value: ${{jobs.job1.outputs.job_output2}}
+        value: ${{jobs.called_job.outputs.job_output2}}
 jobs:
-  job1:
+  called_job:
     runs-on: ubuntu-latest
     outputs:
       job_output1: ${{steps.out_caller2_1.outputs.out1}}
