@@ -1,0 +1,24 @@
+name: concurrency_ex
+run-name: concurrency_ex
+on: workflow_dispatch
+jobs:
+  concurrency_ex1:
+    runs-on: ubuntu-latest
+    concurrency:
+      group: grp1
+      cancel-in-progress: true
+    steps:
+      - run: echo "checking job concurrencies"
+  concurrency_ex2:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "checking job concurrencies"
+  concurrency_ex3:
+    runs-on: ubuntu-latest
+    concurrency:
+      group: grp1
+      cancel-in-progress: true
+    steps:
+      - run: echo "checking job concurrencies"
+      
+    
