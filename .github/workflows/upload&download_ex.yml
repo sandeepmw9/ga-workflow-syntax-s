@@ -1,0 +1,36 @@
+name: upload&download_ex
+run-name: upload&download_ex
+on: workflow_dispatch
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+      - run: 9*9 > multiply.txt
+      - uses: actions/upload-artifacts@v4
+        with:
+          name: multiply
+          path: multiply.txt
+  job2:
+    needs: job1
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifacts@v4
+        with:
+          name: multiply
+      - run: |
+          value=$(cat multiply.txt)
+          $value+9 > final.txt
+      - uses: actions/upload-artifacts@v4
+        with:
+          name: final
+          path: final.txt
+  job3: 
+    needs: job2
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifacts@v4
+        with:
+          name: final
+      - run: cat final.txt
+   
+          
