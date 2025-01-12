@@ -7,3 +7,11 @@ jobs:
     with:
       input1: "sandeep"
       input2: "mishra"
+  job2:
+    needs: job1
+    runs-on: ubuntu-latest
+    steps:
+      - name: display_outputs
+        run: |
+          echo "first output = ${{needs.jobs1.outputs.out1}}"
+          echo "second output = ${{needs.jobs1.outputs.out2}}"
