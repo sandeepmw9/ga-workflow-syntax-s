@@ -13,7 +13,7 @@ on:
         required: true
     outputs:
       out1: ${{jobs.job1.job_output1}}
-      out2: ${{jobs.job2.job_output2}}
+      out2: ${{jobs.job1.job_output2}}
 
 jobs:
   job1:
