@@ -5,7 +5,8 @@ jobs:
   job1:
     runs-on: ubuntu-latest
     steps:
-      - run: 9*9 > multiply.txt
+      - shell: bash
+        run: expr 9 \* 9 > multiply.txt
       - uses: actions/upload-artifacts@v4
         with:
           name: multiply
@@ -17,9 +18,10 @@ jobs:
       - uses: actions/download-artifacts@v4
         with:
           name: multiply
-      - run: |
+      - shell: bash
+        run: |
           value=$(cat multiply.txt)
-          $value+9 > final.txt
+          expr $value + 9 > final.txt
       - uses: actions/upload-artifacts@v4
         with:
           name: final
