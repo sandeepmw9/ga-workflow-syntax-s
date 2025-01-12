@@ -11,9 +11,21 @@ on:
         description: input2
         type: string
         required: true
+    outputs:
+      out1: ${{jobs.job1.job_output1}}
+      out2: ${{jobs.job2.job_output2}}
 
 jobs:
   job1:
+    outputs:
+      job_output1: ${{steps.out_caller2_1.outputs.out1}}
+      job_output2: ${{steps.out_caller2_2.outputs.out2}}
     runs-on: ubuntu-latest
     steps:
       - run: echo "Hello ${{inputs.input1}} ${{inputs.input2}}"
+      - name: output_values_to_caller2_1
+        id: out_caller2_1
+        run: echo out1="output1 >> $GITHUB_OUTPUT"
+      - name: output_values_to_caller2_2
+        id: out_caller2_2
+        run: echo out2="output2 >> $GITHUB_OUTPUT"
