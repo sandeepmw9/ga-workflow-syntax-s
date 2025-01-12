@@ -12,3 +12,9 @@ jobs:
     - run: echo ${{env.level}}
       env:
         level: step
+    - run: echo "hello from $SHELL"
+    - run: echo "hello from $SHELL"
+      shell: bash
+      
+      
+
