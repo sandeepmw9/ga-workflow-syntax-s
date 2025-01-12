@@ -13,5 +13,5 @@ jobs:
     steps:
       - name: display_outputs
         run: |
-          echo ${{needs.jobs1.outputs.out1}}
-          echo ${{needs.jobs1.outputs.out2}}
+          echo ${{needs.jobs1.outputs.output1}}
+          echo ${{needs.jobs1.outputs.output2}}
