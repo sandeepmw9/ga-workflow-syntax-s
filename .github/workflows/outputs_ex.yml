@@ -17,7 +17,7 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       output1: ${{ steps.step1.outputs.key1 }}
-      output2: ${{ steps.step2.outputs.key1 }}
+      output2: ${{ steps.step2.outputs.key2 }}
     steps:
       - id: step1
         run: echo "key1=value1" >> $GITHUB_OUTPUT
