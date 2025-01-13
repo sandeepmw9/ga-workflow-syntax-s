@@ -22,7 +22,7 @@ jobs:
       - id: step1
         run: echo "key1=value1" >> $GITHUB_OUTPUT
       - id: step2
-        run: echo "key2-value2" >> $GITHUB_OUTPUT
+        run: echo "key2=value2" >> $GITHUB_OUTPUT
   job2:
     needs: job1
     environment: ${{ inputs.env_type }}
