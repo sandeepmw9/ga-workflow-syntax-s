@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       env_type:
-        description: envronment type
+        description: environment type
         required: true
         type: choice
         options:
